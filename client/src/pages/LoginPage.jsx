@@ -69,14 +69,14 @@ const LoginPage = () => {
       </div>
 
       <div className="w-full max-w-md animate-scale-in">
-        <div className="glass-panel p-10 rounded-[2.5rem] border border-white/5 space-y-8 relative">
-          <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-brand-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-brand-500/20 rotate-12">
-            <Sparkles className="w-12 h-12 text-white" />
+        <div className="glass-panel p-8 rounded-[2rem] border border-white/5 space-y-6 relative">
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-brand-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-brand-500/20 rotate-12">
+            <Sparkles className="w-10 h-10 text-white" />
           </div>
 
-          <div className="text-center pt-8">
-            <h1 className="text-4xl font-black font-display text-white mb-2">Welcome</h1>
-            <p className="text-white/40 font-medium">Choose your way to start creating</p>
+          <div className="text-center pt-6">
+            <h1 className="text-3xl font-black font-display text-white mb-2">Welcome</h1>
+            <p className="text-white/40 font-medium text-sm">Choose your way to start creating</p>
           </div>
 
           {/* Login Modes Tabs */}
@@ -109,13 +109,13 @@ const LoginPage = () => {
                     type="email" 
                     required
                     placeholder="name@email.com"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-brand-500/50 focus:bg-white/10 transition-all text-white font-bold"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 outline-none focus:border-brand-500/50 focus:bg-white/10 transition-all text-white font-bold"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
               </div>
-              <div className="space-y-1.5">
+              <div className="space-y-1">
                 <label className="text-[10px] font-black uppercase tracking-widest text-white/20 ml-4">Password</label>
                 <div className="relative group">
                   <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-brand-400 transition-colors" />
@@ -123,7 +123,7 @@ const LoginPage = () => {
                     type="password" 
                     required
                     placeholder="••••••••"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-brand-500/50 focus:bg-white/10 transition-all text-white font-bold"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 outline-none focus:border-brand-500/50 focus:bg-white/10 transition-all text-white font-bold"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
@@ -132,7 +132,7 @@ const LoginPage = () => {
               <button 
                 type="submit" 
                 disabled={loading}
-                className="w-full btn-premium btn-premium-primary py-5 text-lg shadow-glow-purple group mt-2"
+                className="w-full btn-premium btn-premium-primary py-4 text-base shadow-glow-purple group mt-2"
               >
                 {loading ? (
                   <div className="flex items-center justify-center gap-2">
@@ -157,7 +157,7 @@ const LoginPage = () => {
                     type="text" 
                     required
                     placeholder="Enter name to explore..."
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-brand-500/50 focus:bg-white/10 transition-all text-white font-bold"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 outline-none focus:border-brand-500/50 focus:bg-white/10 transition-all text-white font-bold"
                     value={guestName}
                     onChange={(e) => setGuestName(e.target.value)}
                   />
@@ -166,7 +166,7 @@ const LoginPage = () => {
               <button 
                 type="submit" 
                 disabled={loading}
-                className="w-full btn-premium btn-premium-secondary py-5 text-lg group mt-2"
+                className="w-full btn-premium btn-premium-secondary py-4 text-base group mt-2"
               >
                 {loading ? 'Entering...' : 'Explore Now'}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -181,7 +181,7 @@ const LoginPage = () => {
 
           <button 
             onClick={handleGoogleLogin}
-            className="w-full py-4 px-6 glass rounded-2xl border border-white/5 flex items-center justify-center gap-3 hover:bg-white/10 transition-all group"
+            className="w-full py-3 px-6 glass rounded-xl border border-white/5 flex items-center justify-center gap-3 hover:bg-white/10 transition-all group"
           >
             <Globe className="w-5 h-5 text-brand-400 group-hover:rotate-12 transition-transform" />
             <span className="text-sm font-bold text-white/80">Continue with Google</span>

@@ -11,6 +11,11 @@ const passport = require('./config/passport');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Trust proxy for platforms like Render/Vercel
+if (process.env.NODE_ENV === 'production') {
+  app.set('trust proxy', 1);
+}
+
 // ─── Logging Middleware ──────────────────────────────────────────────
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
@@ -51,6 +56,7 @@ app.use(session({
   store: store || undefined,
   cookie: {
     secure: process.env.NODE_ENV === 'production', 
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
     maxAge: 7 * 24 * 60 * 60 * 1000,
   },
 }));
@@ -93,8 +99,8 @@ const startServer = async () => {
     });
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
 
-    app.listen(PORT, '127.0.0.1', () => {
-      console.log(`🚀 Server running on http://127.0.0.1:${PORT}`);
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
     });
   } catch (err) {
     console.error('❌ MongoDB connection failed:', err.message);

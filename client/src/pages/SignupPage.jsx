@@ -35,14 +35,14 @@ const SignupPage = () => {
       </div>
 
       <div className="w-full max-w-md animate-scale-in">
-        <div className="glass-panel p-10 rounded-[2.5rem] border border-white/5 space-y-8 relative">
-          <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-brand-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-brand-500/20 rotate-12">
-            <Sparkles className="w-12 h-12 text-white" />
+        <div className="glass-panel p-8 rounded-[2rem] border border-white/5 space-y-6 relative">
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-brand-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-brand-500/20 rotate-12">
+            <Sparkles className="w-10 h-10 text-white" />
           </div>
 
-          <div className="text-center pt-8">
-            <h1 className="text-4xl font-black font-display text-white mb-2">Create Account</h1>
-            <p className="text-white/40 font-medium">Join the premium community of creators</p>
+          <div className="text-center pt-6">
+            <h1 className="text-3xl font-black font-display text-white mb-2">Create Account</h1>
+            <p className="text-white/40 font-medium text-sm">Join the premium community of creators</p>
           </div>
 
           <form onSubmit={handleSignup} className="space-y-5">
@@ -54,7 +54,7 @@ const SignupPage = () => {
                   type="text" 
                   required
                   placeholder="Ateeb Arman"
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-brand-500/50 focus:bg-white/10 transition-all text-white font-bold"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 outline-none focus:border-brand-500/50 focus:bg-white/10 transition-all text-white font-bold"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -69,7 +69,7 @@ const SignupPage = () => {
                   type="email" 
                   required
                   placeholder="hello@example.com"
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-brand-500/50 focus:bg-white/10 transition-all text-white font-bold"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 outline-none focus:border-brand-500/50 focus:bg-white/10 transition-all text-white font-bold"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -84,7 +84,7 @@ const SignupPage = () => {
                   type="password" 
                   required
                   placeholder="••••••••"
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-brand-500/50 focus:bg-white/10 transition-all text-white font-bold"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 outline-none focus:border-brand-500/50 focus:bg-white/10 transition-all text-white font-bold"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -94,7 +94,7 @@ const SignupPage = () => {
             <button 
               type="submit" 
               disabled={loading}
-              className="w-full btn-premium btn-premium-primary py-5 text-lg shadow-glow-purple group mt-4"
+              className="w-full btn-premium btn-premium-primary py-4 text-base shadow-glow-purple group mt-2"
             >
               {loading ? 'Creating...' : 'Sign Up Free'}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
